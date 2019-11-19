@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome to the Chausstore Shop !{% endblock %}
+     {% block stylesheets %}<link rel="stylesheet" type="text/css"  href="../style/welcome.css">{% endblock %}
+
+
+
+{% block body %}
+<h1>Welcome to the Chaustore Shop !</h1>
+<nav>
+<a class="product" href="{{ path('product_index') }}">See the Product</a></br>
+<a class="brand" href="{{ path('brand_index') }}">See the Brand</a></br>
+<a class="size" href="{{ path('size_index') }}">See the Size</a></br>
+<a class="color" href="{{ path('color_index') }}">See the Color</a></br>
+<a class="category" href="{{ path('category_index') }}">See the Category</a>
+</nav>
+{% if app.user %}
+        <div class="mb-3">
+             <a href="{{ path('app_login') }}">Logout</a>
+        </div>
+    {% endif %}
+{% endblock %}
+
+
